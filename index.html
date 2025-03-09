@@ -802,5 +802,27 @@
     });
 </script>
 
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    // Danh sách tỉnh cần thay đổi màu
+    const provinces = ["VN06", "VN58"]; // VN06 = Yên Bái, VN58 = Bình Phước
+
+    provinces.forEach(function (id) {
+        let province = document.getElementById(id);
+        if (province) {
+            province.addEventListener("click", function () {
+                let currentColor = province.getAttribute("fill");
+                if (currentColor === "#3498db") {
+                    province.setAttribute("fill", "#6f9c76"); // Màu cũ
+                } else {
+                    province.setAttribute("fill", "#3498db"); // Màu xanh lam
+                }
+            });
+        }
+    });
+});
+</script>
+
 </body>
 </html>
